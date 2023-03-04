@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./notify.css">
+  <title>Toast Notification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <script src="./notify.js" defer></script>
+</head>
+
+<body>
+  <ul class="notifications"></ul>
+  <div class="notifyForm">
+    <label for="type">Type of Notification</label>
+    <select name="type" id="type">
+      <option value="success">Success</option>
+      <option value="error">Error</option>
+      <option value="warning">Warning</option>
+      <option value="info">Info</option>
+    </select>
+    <label for="message">Enter Mesage</label>
+    <input type="text" placeholder="Type your Message" id="message">
+    <label for="position">Position</label>
+    <select name="position" id="position">
+      <option value="top-left">Top Left</option>
+      <option value="top-center">Top Center</option>
+      <option value="top-right">Top Right</option>
+      <option value="bottom-left">Bottom Left</option>
+      <option value="bottom-center">Bottom Center</option>
+      <option value="bottom-right">Bottom Right</option>
+    </select>
+    <label for="timer">Timer to hide Notification</label>
+    <input type="number" id="timer" placeholder="Add Time in Milliseconds">
+    <span class="notifyHintText">If you Don't provide time Notification will not hide automatic</span>
+    <button class="shownotifcationbtn" onclick="showNotification()">Show Notification</button>
+    <div class="buttons">
+      <button class="btn" id="success" onclick="createToast({
+        type : 'success',
+        message : 'Success Message',
+        position : 'top-right',
+        timer : 3000
+    })">Success</button>
+      <button class="btn" id="error" onclick="createToast({
+        type : 'error',
+        message : 'Error Message',
+        position : 'bottom-right',
+        timer : 3000
+    })">Error</button>
+      <button class="btn" id="warning" onclick="createToast({
+        type : 'warning',
+        message : 'Warning Message',
+        position : 'bottom-left',
+        timer : 3000
+    })">Warning</button>
+      <button class="btn" id="info" onclick="createToast({
+        type : 'info',
+        message : 'Info Message',
+        position : 'top-left',
+        timer : 3000
+    })">Info</button>
+    </div>
+  </div>
+</body>
+
+</html>
